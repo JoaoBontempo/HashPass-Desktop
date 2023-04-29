@@ -4,6 +4,7 @@
   "description": "HashPass Desktop Application",
   "main": "index.js",
   "scripts": {
+    "start" : "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/JoaoBontempo/hashpass-desktop/issues"
   },
-  "homepage": "https://github.com/JoaoBontempo/hashpass-desktop#readme"
+  "homepage": "https://github.com/JoaoBontempo/hashpass-desktop#readme",
+  "devDependencies": {
+    "electron": "^24.1.3"
+  }
 }
