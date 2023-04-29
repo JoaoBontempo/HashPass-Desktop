@@ -1,0 +1,19 @@
+{
+  "name": "hashpass-desktop",
+  "version": "1.0.0",
+  "description": "HashPass Desktop Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JoaoBontempo/hashpass-desktop.git"
+  },
+  "author": "Joao Vitor Bontempo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaoBontempo/hashpass-desktop/issues"
+  },
+  "homepage": "https://github.com/JoaoBontempo/hashpass-desktop#readme"
+}
