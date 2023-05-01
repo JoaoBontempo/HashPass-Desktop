@@ -1,3 +1,6 @@
+.sass-cache
+.fuse_hidden*
+
 # Logs
 logs
 *.log

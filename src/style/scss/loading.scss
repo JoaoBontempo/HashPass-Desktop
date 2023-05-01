@@ -1,0 +1,27 @@
+.loading-box {
+    height: 100vh;
+    background-color: $L-background;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 200px;
+            margin: 0 auto;
+        }
+    }
+
+    .loader {
+        height: 7px;
+        width: 100%;
+        background-color: $L-dark-blue;
+    }
+}
+
