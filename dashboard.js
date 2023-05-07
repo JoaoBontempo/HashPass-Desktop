@@ -12,7 +12,6 @@ function buildDashboard() {
     dashboard.loadFile('./src/view/dashboard.html')
 }
 
-
 exports.show = () => {
     ipcMain.on('serverip', (event, ip) => {
         event.returnValue = global.Server.ip

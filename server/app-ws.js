@@ -1,4 +1,5 @@
 const WebSocket = require('ws');
+const auth = require('./auth.js')
 
 global.onReceive = onMessage
 
@@ -7,15 +8,19 @@ function onError(ws, err) {
 }
  
 function onMessage(ws, data) {
-    console.log(`onMessage: ${data}`);
-    global.onReceive(ws, data.toString())
-    ws.send(`recebido!`);
+    auth.decryptDeviceMessage(data.toString())
+        .then((message) => {
+            console.log(message)
+        }).catch(error => {
+            ws.send(error.toString())
+        })
 }
  
 function onConnection(ws, req) {
     ws.on('message', data => onMessage(ws, data));
     ws.on('error', error => onError(ws, error));
-    console.log(`onConnection`);
+    //ws.close() close the connection if the device is not authorized
+    ws.send(JSON.stringify(global.connectedDevice))
 }
  
 module.exports = (server) => {
