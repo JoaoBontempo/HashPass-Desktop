@@ -3,11 +3,14 @@ const { BrowserWindow, ipcMain, Notification, clipboard } = require('electron');
 function buildDashboard() {
     let dashboard = new BrowserWindow({
         width: 500,
-        height: 500,
+        height: 350,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-        }
+        },
+        frame: false,
+        menu: null,
+        resizable: false
     })
     dashboard.loadFile('./src/view/dashboard.html')
 }

@@ -11,14 +11,15 @@ let loadingWindow
 
 const createWindow = () => {
     loadingWindow = new BrowserWindow({
-        width: 600,
-        height: 300,
+        width: 500,
+        height: 350,
         frame: false,
         resizable: false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-        }
+        },
+        menu: null, // Disable the menu bar
     })
     loadingWindow.setMenuBarVisibility(false)
     loadingWindow.loadFile('./src/view/index.html')

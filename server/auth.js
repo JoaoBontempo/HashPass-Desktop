@@ -8,9 +8,6 @@ exports.decryptDeviceMessage = (message) => {
     return new Promise((resolve, reject) => {
         try {
             const device = global.connectedDevice
-            console.log(message)
-            console.log(device.privateKey)
-    
     
             const decryptedMessage = RSA.privateDecrypt({
                 key: device.privateKey

@@ -1,0 +1,6 @@
+appId: com.hashpass
+productName: HashPass Desktop
+directories:
+  output: build
+files:
+  - dist/**/*

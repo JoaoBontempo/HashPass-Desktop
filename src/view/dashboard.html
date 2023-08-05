@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="../style/index.css">
+
 		<meta charset="UTF-8" />
 		<meta
 			http-equiv="Content-Security-Policy"
@@ -14,7 +15,28 @@
 		<title>HashPass</title>
 	</head>
 	<body>
-		<p id="ip">IP:</p>
+		<aside class="menu">
+			<img class="logo" id="menu-logo" src="../img/logo-light.png">
+			<div class="items">
+				<div class="menu-item">
+					<img src="../img/import.png">
+					<label>Importar</label>
+				</div>
+				<div class="menu-item">
+					<img src="../img/settings.png">
+					<label>Configurações</label>
+				</div>
+			</div>
+		</aside>
+		<section class="default-dashboard">
+			<nav>
+				<label id="active-menu">HashPass</label>
+				<div class="control-buttons">
+					<span id="minimize-button" class="control-button"></span>
+					<span id="close-button" class="control-button"></span>
+				</div>
+			</nav>
+		</section>
 	</body>
 	<script src="../js/dashboard.js"></script>
 </html>
