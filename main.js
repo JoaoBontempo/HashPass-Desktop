@@ -1,6 +1,6 @@
 const { app, BrowserWindow, ipcMain, Notification, clipboard } = require('electron');
 const server = require('./src/server/index.js')
-
+//random code here
 const url = require("url");
 const path = require("path");
 
