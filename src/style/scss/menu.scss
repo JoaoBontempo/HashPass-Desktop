@@ -1,0 +1,52 @@
+.menu {
+    background-color: $L-dark-blue;
+    width: 150px;
+    display: flex;
+    border-radius: 0 15px 15px 0;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    -webkit-box-shadow: 10px 0px 17px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 0px 17px -3px rgba(0,0,0,0.75);
+    box-shadow: 10px 0px 17px -3px rgba(0,0,0,0.75);
+    z-index: 3;
+    
+    .logo {
+        width: 120px;
+        margin: 10px auto;
+    }
+
+    .items{
+        height: 70%;
+        color: white;
+        padding: 0px 10px;
+        .menu-item {
+            margin-top: 15PX;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+
+            img {
+                width: 15%;
+                filter: brightness(0) invert(1);
+            }
+
+            label {
+                padding-top: 5px;
+                width: 75%;
+            }
+
+            &:hover{
+                color: $L-accent;
+
+                img{
+                    filter: brightness(0) invert(84%) sepia(28%) saturate(1155%) hue-rotate(146deg) brightness(103%) contrast(101%);
+                }
+            }
+            
+        }
+    }
+}
