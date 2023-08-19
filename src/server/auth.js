@@ -13,12 +13,9 @@ exports.decryptDeviceMessage = (message) => {
                 padding: RSA.constants.RSA_NO_PADDING,
             }, Buffer.from(message, 'base64'))
             
-            let decryptedMessageData = decryptedBuffer.toString('utf-8')
-            console.log(decryptedMessageData)
-            decryptedMessageData = decryptedMessageData.substring(decryptedMessageData.indexOf('{'))
-            console.log(decryptedMessageData)
+            let decryptedMessageData = decryptedBuffer.toString('utf-8').replace(/^\uFEFF/, '')
+            decryptedMessageData = decryptedMessageData.substring(decryptedMessageData.indexOf('{"message'))
             decryptedMessageData = JSON.parse(decryptedMessageData)
-            console.log(decryptedMessageData)
             resolve(decryptedMessageData)
         } catch (error) {
             console.log(error)
