@@ -1,12 +1,13 @@
 const ip = require('ip')
 const app = require('./app');
 const appWs = require('./app-ws');
+const process = require('./process.js');
 
 class HashPassServer {
     constructor(){
-
+        
     }
-
+    
     start() {
         return new Promise(resolve => {
             console.log('started')
@@ -17,6 +18,13 @@ class HashPassServer {
                 resolve({ ip: serverAddress, server: wsServer })
             })
         })
+    }
+
+    processData(ws, data){
+        if(data.success){
+            process[data.operation](ws, data)
+            return
+        }
     }
 }
 

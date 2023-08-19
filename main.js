@@ -1,6 +1,5 @@
-const { app, BrowserWindow, ipcMain, Notification, clipboard } = require('electron');
+const { app, BrowserWindow } = require('electron');
 const server = require('./src/server/index.js')
-//random code here
 const url = require("url");
 const path = require("path");
 
@@ -34,15 +33,7 @@ function createWindow() {
 		mainWindow = null
 	})
 
-	global.onWsReceive = (ws, data) => {
-		console.log('received')
-		clipboard.writeText(data.password)
-		new Notification({
-			title: 'HashPass',
-			body: `Senha ${data.title} copiada com sucesso!`,
-			icon: './src/img/logo-back-light.png'
-		}).show()
-	}
+	global.onWsReceive = server.processData
 }
 
 app.on('ready', () => {
