@@ -1,8 +1,6 @@
-import { contextBridge, ipcRenderer } from "electron"
+import setBridge from "./bridge"
 
-contextBridge.exposeInMainWorld('api', {
-  sendMessage: (data : string) => ipcRenderer.send('wsMessage', data)
-})
+setBridge()
 
 function domReady(condition: DocumentReadyState[] = ['complete', 'interactive']) {
   return new Promise(resolve => {

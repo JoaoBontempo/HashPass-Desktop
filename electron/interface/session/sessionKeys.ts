@@ -1,5 +1,5 @@
 export enum SessionKeys {
     DEVICE = 'device',
-    SOCKET = 'websocket'
-
+    SOCKET = 'websocket',
+    WINDOW = 'window'
 }

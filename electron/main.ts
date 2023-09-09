@@ -1,9 +1,9 @@
 import { app, BrowserWindow } from 'electron'
 import path from 'node:path'
-import { ipcMain } from 'electron'
 import HashPassSocket from './server/socket'
 import { set } from './session'
 import { SessionKeys } from './interface/session/sessionKeys'
+import handleIpc from './ipc'
 
 // The built directory structure
 //
@@ -26,22 +26,29 @@ function createWindow() {
   
   const socket = new HashPassSocket()
   set<HashPassSocket>(SessionKeys.SOCKET, socket);
-  ipcMain.on('wsMessage', (_, data) => {
-    socket.sendMessage(data)
-  })
-
+  
   win = new BrowserWindow({
     icon: path.join(process.env.PUBLIC, 'electron-vite.svg'),
+    autoHideMenuBar: true,
+    frame: false,
+    transparent: true,
+    resizable: false,
+    titleBarStyle: 'customButtonsOnHover',
+    height: 720,
+    width: 1024,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
   })
+  
+  set<BrowserWindow>(SessionKeys.WINDOW, win);
 
+  handleIpc()
   // Test active push message to Renderer-process.
   win.webContents.on('did-finish-load', () => {
     win?.webContents.send('main-process-message', (new Date).toLocaleString())
   })
-
+  
   if (VITE_DEV_SERVER_URL) {
     win.loadURL(VITE_DEV_SERVER_URL)
   } else {

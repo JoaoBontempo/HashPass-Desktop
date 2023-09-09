@@ -1,3 +1,5 @@
 {
-    "click" : "Click here!"
+    "click" : "Click here!",
+    "home" : "Home page",
+    "another" : "Another page"
 }

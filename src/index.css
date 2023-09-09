@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dragable {
+  -webkit-app-region: drag;
+}
+
+select, button {
+  -webkit-app-region: none;
+}
+
+html {
+  overflow: hidden !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background-color: transparent;
+}
+
+body, html, .v-application {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.default-menu {
+  width: 100vw;
+  height: calc(100vh - (var(--v-layout-bottom) + var(--v-layout-top)));
+  background-color: rgb(var(--v-theme-background));
+}
+
+.main-logo {
+  opacity: 0.25;
+}

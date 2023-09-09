@@ -1,6 +1,9 @@
 <!-- App.vue -->
 <template>
-  <v-app background-color="background">
+  <v-app @wheel.hidden
+  @touchmove.hidden
+  @scroll.hidden background-color="background">
+    <TitleBar></TitleBar>
     <v-main>
       <RouterView></RouterView>
     </v-main>
@@ -11,12 +14,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import BottomNavigation from './components/BottomNavigation.vue';
+import TitleBar from './components/TitleBar.vue';
 import { RouterView } from 'vue-router';
 
 export default defineComponent({
   components: {
     'BottomNavigation': BottomNavigation,
     'RouterView' : RouterView,
+    'TitleBar' : TitleBar
   },
 });
 </script>

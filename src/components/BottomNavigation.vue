@@ -1,5 +1,5 @@
 <template>
-    <v-bottom-navigation bg-color="primary" v-model="activeTab" app>
+    <v-bottom-navigation bg-color="primary" class="rounded-b-lg" v-model="activeTab" app>
         <v-btn v-for="(item, index) in items" :key="index" @click="activeTab = item.tab" :to="item.route"
             :exact="item.exact" :active="activeTab === item.tab">
             {{ item.text }}

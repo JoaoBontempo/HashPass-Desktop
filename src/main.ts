@@ -14,14 +14,14 @@ import './index.css';
 import { darkTheme, lightTheme } from './theme/theme'
 import i18n from './locales/i18n'
 import { useI18n } from 'vue-i18n'
-
+import { AppThemes } from '../public/ts/theme'
 
 const vuetify = createVuetify({
   locale:{
     adapter: createVueI18nAdapter({ i18n, useI18n }),
   },
   theme: {
-    defaultTheme: 'darkTheme',
+    defaultTheme: AppThemes.DARK,
     themes: {
       darkTheme, lightTheme
     }
