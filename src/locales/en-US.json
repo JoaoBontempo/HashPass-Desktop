@@ -1,5 +1,6 @@
 {
-    "click" : "Click here!",
-    "home" : "Home page",
-    "another" : "Another page"
+    "btnImport" : "Import",
+    "home" : "HashPass",
+    "import" : "HashPass - Import",
+    "chooseFile" : "Choose a file to import"
 }

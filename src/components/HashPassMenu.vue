@@ -1,5 +1,5 @@
 <template>
-    <section class="default-menu">
+    <section class="default-menu p-5">
         <slot></slot>
     </section>
 </template>

@@ -1,5 +1,6 @@
 {
-    "click" : "Clique aqui!",
-    "home" : "Pàgina principal",
-    "another" : "Outra página"
+    "btnImport" : "Importar",
+    "home" : "HashPass",
+    "import" : "HashPass - Importação",
+    "chooseFile" : "Selecione um arquivo para importar"
 }

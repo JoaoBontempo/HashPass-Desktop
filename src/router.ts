@@ -7,9 +7,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('./components/MainMenu.vue'),
   },
   {
-    path: '/another',
-    name: 'another',
-    component: () => import('./components/AnotherPage.vue'),
+    path: '/import',
+    name: 'import',
+    component: () => import('./components/ImportPage.vue'),
   },
 ]
 

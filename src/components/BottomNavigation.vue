@@ -25,7 +25,7 @@ export default {
                     tab: 'another',
                     text: 'Another',
                     icon: 'mdi-account',
-                    route: '/another',
+                    route: 'import',
                     exact: false,
                 },
                 // Add more tabs as needed

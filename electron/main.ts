@@ -34,8 +34,8 @@ function createWindow() {
     transparent: true,
     resizable: false,
     titleBarStyle: 'customButtonsOnHover',
-    height: 720,
-    width: 1024,
+    height: 600,
+    width: 800,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
