@@ -1,11 +1,13 @@
 <template>
-    <div class="menu-option">
+    <v-card>
         <slot></slot>
-    </div>
+    </v-card>
 </template>
-  
-<script>
-export default {
-    name: "HashPassMenu"
-};
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+    name: 'HashPassMenu'
+})
 </script>
