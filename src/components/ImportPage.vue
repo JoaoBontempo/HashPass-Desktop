@@ -24,10 +24,13 @@ import { defineComponent, reactive } from 'vue';
 import HashPassMenu from './HashPassMenu.vue';
 import ImportOption from './ImportOption.vue';
 import { BrowserExportOption } from '../../public/ts/browserExportOption'
+import { useToast } from "vue-toastification";
+import i18n from '../locales/i18n';
 
 export default defineComponent({
     name: 'ImportPage',
     setup() {
+        const toastr = useToast();        
         const state = reactive({
             selectedImportIption: BrowserExportOption.NONE,
             selectedFile: []
@@ -58,6 +61,9 @@ export default defineComponent({
         
 
         const validateImport = function() : boolean {
+            if(state.selectedFile.length == 0) {
+                toastr.warning(i18n.global.t('noFileSelected'))
+            }
             return true;
         }
 

@@ -17,10 +17,14 @@
     "ip": "^1.1.8",
     "morgan": "^1.10.0",
     "npm": "^10.0.0",
+    "stylus": "^0.60.0",
+    "stylus-loader": "^3.0.2",
     "utf-8-validate": "^5.0.10",
     "vue": "^3.2.47",
     "vue-i18n": "^9.3.0",
     "vue-router": "^4.0.13",
+    "vue-toasted": "^1.1.28",
+    "vue-toastification": "^2.0.0-rc.5",
     "vuetify": "^3.3.15"
   },
   "devDependencies": {

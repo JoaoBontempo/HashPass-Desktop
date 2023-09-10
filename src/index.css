@@ -55,3 +55,7 @@ html::-webkit-scrollbar {
   border: 1.5px solid rgb(var(--v-theme-accent));
   color: rgb(var(--v-theme-accent))
 }
+
+.Vue-Toastification__toast--warning{
+  color: black !important;
+}

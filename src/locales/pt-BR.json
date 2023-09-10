@@ -2,5 +2,6 @@
     "btnImport" : "Importar",
     "home" : "HashPass",
     "import" : "HashPass - Importação",
-    "chooseFile" : "Selecione um arquivo para importar"
+    "chooseFile" : "Selecione um arquivo para importar",
+    "noFileSelected" : "Nenhum arquivo foi selecionado para importar"
 }
