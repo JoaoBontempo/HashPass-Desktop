@@ -1,9 +1,9 @@
 export default class DeviceDTO {
     constructor(
         id : string,
-        publicKey : string | Buffer,
-        privateKey:  string | Buffer,
-        ourPublicKey : string | Buffer
+        publicKey : string,
+        privateKey:  string,
+        ourPublicKey : string
     ) {
         this.id = id;
         this.publicKey = publicKey;
@@ -12,7 +12,7 @@ export default class DeviceDTO {
     }
 
     id : string;
-    publicKey : string | Buffer;
-    privateKey:  string | Buffer;
-    ourPublicKey : string | Buffer;
+    publicKey : string;
+    privateKey:  string;
+    ourPublicKey : string;
 }

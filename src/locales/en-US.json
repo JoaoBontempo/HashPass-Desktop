@@ -3,5 +3,6 @@
     "home" : "HashPass",
     "import" : "HashPass - Import",
     "chooseFile" : "Choose a file to import",
-    "noFileSelected" : "No file has been selected to import"
+    "noFileSelected" : "Please, choose a file to import",
+    "noBrowserSelected" : "Please, choose a browser to import"
 }

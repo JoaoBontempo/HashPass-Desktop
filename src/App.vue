@@ -2,7 +2,7 @@
 <template>
   <v-app @wheel.hidden
   @touchmove.hidden
-  @scroll.hidden background-color="background">
+  @scroll.hidden class="shadow-lg">
     <TitleBar></TitleBar>
     <v-main>
       <RouterView></RouterView>

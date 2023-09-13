@@ -1,6 +1,6 @@
 <template>
     <v-card class="import-option" :selected="modelValue == value">
-        <label :for="value" class="flex flex-col justify-center items-center">
+        <label :for="value" class="font-bold flex flex-col justify-center items-center cursor-pointer">
             <v-icon>{{ 'mdi-' + icon }}</v-icon>
             <span>{{ label }}</span>
         </label>

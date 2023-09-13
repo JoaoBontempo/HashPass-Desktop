@@ -1,4 +1,5 @@
 export enum DeviceOperation {
     COPY = 'COPY',
-    SHOW = 'COPY'
+    SHOW = 'SHOW',
+    BROWSER_FILE = 'BROWSER_FILE'
 }

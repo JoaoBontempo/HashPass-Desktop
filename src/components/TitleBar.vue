@@ -9,7 +9,7 @@
             </select>
         </div>
         <v-spacer></v-spacer>
-        <span>{{ $t(`${$route.name?.toString()}`) }}</span>
+        <span class="text-base font-bold">{{ $t(`${$route.name?.toString()}`) }}</span>
         <v-spacer></v-spacer>
         <div>
             <v-btn @click="minimize" icon="mdi-minus" variant="text"></v-btn>
