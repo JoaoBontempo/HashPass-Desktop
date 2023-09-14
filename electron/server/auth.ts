@@ -34,22 +34,7 @@ export function decryptDeviceMessage (message : string) {
     })
 }
 
-export function encryptDeviceMessage(message : DeviceOperationDTO<unknown>) : string {
-    /*const device = get<DeviceDTO>(SessionKeys.DEVICE);
-    console.log(device.publicKey)
-    console.log('\n\n')
-    const deviceMessage = RSA.publicEncrypt({
-        key: device.publicKey,
-        padding: RSA.constants.RSA_PKCS1_PADDING
-    }, Buffer.from(JSON.stringify(message)))
-    for(let byte of deviceMessage){
-        console.log(byte)
-    }
-    const messageToString = deviceMessage.toString('base64')
-    console.log(messageToString)
-    console.log('\n\n')
-    return messageToString*/
-
+export function encryptAssymetricDeviceMessage(message : DeviceOperationDTO<unknown>) : string {
     const device = get<DeviceDTO>(SessionKeys.DEVICE);
     const crypt = new JSEncrypt();
     crypt.setPublicKey(device.publicKey)
@@ -59,13 +44,13 @@ export function encryptDeviceMessage(message : DeviceOperationDTO<unknown>) : st
 export function newKey (deviceAuth : AuthDTO) {
     return new Promise<string>(resolve => {
         const keys = RSA.generateKeyPairSync('rsa', {
-            modulusLength: 4096,    // key size in bits
+            modulusLength: 2048,
             publicKeyEncoding: {
                 type: 'spki',
                 format: 'pem',
             },
             privateKeyEncoding: {   
-                type: 'pkcs8',      // !!! pkcs1 doesn't work for me
+                type: 'pkcs8',
                 format: 'pem',
             },
         });
@@ -73,12 +58,14 @@ export function newKey (deviceAuth : AuthDTO) {
         const _privateKey = keys.privateKey
 
         const _publicKey = keys.publicKey
+        const guid = RSA.randomUUID();
 
         const device = new DeviceDTO(
             deviceAuth.id,
             deviceAuth.publicKey,
             _privateKey,
-            _publicKey
+            _publicKey,
+            guid
         )
 
         set<DeviceDTO>(SessionKeys.DEVICE, device);

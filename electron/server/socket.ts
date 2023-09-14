@@ -2,7 +2,7 @@ import api from './api'
 import http from 'http'
 import ip from 'ip';
 import expressWs from 'express-ws'
-import { decryptDeviceMessage, encryptDeviceMessage } from './auth';
+import { decryptDeviceMessage, encryptAssymetricDeviceMessage as encryptAssymetricDeviceMessage } from './auth';
 import DeviceOperationDTO from '../interface/device/deviceOperationDTO';
 import process from './process';
 
@@ -41,7 +41,7 @@ export default class HashPassSocket {
     }
 
     sendMessage(data : DeviceOperationDTO<unknown>) {
-        const deviceMessage = encryptDeviceMessage(data)
+        const deviceMessage = encryptAssymetricDeviceMessage(data)
         this.userWsConnection.send(deviceMessage)
     }
 
