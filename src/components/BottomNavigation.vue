@@ -22,13 +22,13 @@ export default {
                     exact: true,
                 },
                 {
-                    tab: 'another',
-                    text: 'Another',
-                    icon: 'mdi-account',
+                    tab: '',
+                    text: 'Import',
+                    icon: 'mdi-import',
                     route: 'import',
                     exact: false,
                 },
-                // Add more tabs as needed
+        
             ],
         };
     },

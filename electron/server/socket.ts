@@ -2,7 +2,7 @@ import api from './api'
 import http from 'http'
 import ip from 'ip';
 import expressWs from 'express-ws'
-import { decryptAssymetricDeviceMessage, decryptSymetricDeviceMessage, encryptSymetricDeviceMessage } from './auth';
+import { decryptSymetricDeviceMessage, encryptSymetricDeviceMessage } from './auth';
 import DeviceOperationDTO from '../interface/device/deviceOperationDTO';
 import process from './process';
 
