@@ -87,6 +87,7 @@ export default defineComponent({
         }
 
         const importFile = () => {
+            console.log('CLICKED!')
             if(validateImport()){
                 const selectedFile = state.selectedFile[0] as File
                 importCsv(selectedFile);

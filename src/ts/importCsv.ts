@@ -6,6 +6,7 @@ import { BrowserPasswordFile } from "../../public/ts/browserExportOption";
 const toastr = useToast()
 
 export default function importCSV(csv: File): void {
+    console.log(csv)
     Papa.parse(csv, {
         header: true,
         complete: (result) => {

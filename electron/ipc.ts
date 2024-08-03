@@ -37,6 +37,7 @@ function minimize() {
 
 function importFile() {
     ipcMain.on(ExposedKeys.BROWSER_IMPORT, (_, browserCsv : BrowserPasswordFile[]) => {
+        console.log(browserCsv)
         const socket = get<HashPassSocket>(SessionKeys.SOCKET);
         socket.sendMessage({
             data: browserCsv,
