@@ -1,3 +1,8 @@
 {
-    "click" : "Clique aqui!"
+    "btnImport" : "Importar",
+    "home" : "HashPass",
+    "import" : "HashPass - Importação",
+    "chooseFile" : "Selecione um arquivo para importar",
+    "noFileSelected" : "Nenhum arquivo foi selecionado para importar",
+    "noBrowserSelected" : "Por favor, escolha um navegador para importar"
 }

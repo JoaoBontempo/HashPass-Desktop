@@ -3,7 +3,13 @@ import cors from 'cors';
 import helmet from 'helmet'
 import morgan from 'morgan'
 import AuthDTO from '../interface/authDTO';
-import { newKey } from './auth';
+import { encryptAssymetricDeviceMessage, newKey } from './auth';
+import { get } from '../session';
+import DeviceDTO from '../interface/device/deviceDTO';
+import { SessionKeys } from '../interface/session/sessionKeys';
+import DeviceOperationDTO from '../interface/device/deviceOperationDTO';
+import { ExchangeKeyDTO } from '../interface/device/deviceTypes';
+import { DeviceOperation } from '../interface/device/deviceOperation';
 
 const api = express();
  
@@ -31,5 +37,29 @@ api.post('/', (req, res, _) => {
     })
 
 });
+
+api.get('/key', (_req, res, _) => {
+    const device = get<DeviceDTO>(SessionKeys.DEVICE)
+
+    if (!device) {
+        res.sendStatus(401);
+        return
+    }
+
+    const exchangeKeyDTO = {
+        operation: DeviceOperation.EXCHANGE_KEY,
+        success: true,
+        message: 'Guid has been exported sucessfully!',
+        data: {
+            guid : device.guid
+        }
+    } as DeviceOperationDTO<ExchangeKeyDTO>
+
+    const chyperedGuid = encryptAssymetricDeviceMessage(exchangeKeyDTO)
+    console.log('Sending GUID')
+    res.json({
+        key: chyperedGuid
+    })
+})
 
 export default api;

@@ -1,7 +1,7 @@
 <template>
-    <v-card>
+    <section class="default-menu p-5">
         <slot></slot>
-    </v-card>
+    </section>
 </template>
 
 <script lang="ts">

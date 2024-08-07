@@ -14,14 +14,16 @@ import './index.css';
 import { darkTheme, lightTheme } from './theme/theme'
 import i18n from './locales/i18n'
 import { useI18n } from 'vue-i18n'
-
+import { Themes } from './theme/theme'
+import Toast from 'vue-toastification'
+import 'vue-toastification/dist/index.css'
 
 const vuetify = createVuetify({
   locale:{
     adapter: createVueI18nAdapter({ i18n, useI18n }),
   },
   theme: {
-    defaultTheme: 'darkTheme',
+    defaultTheme: Themes.DARK,
     themes: {
       darkTheme, lightTheme
     }
@@ -42,5 +44,6 @@ createApp(App)
     .use(vuetify)
     .use(router)
     .use(i18n)
+    .use(Toast)
     .mount('#app')
     .$nextTick(() => postMessage({ payload: 'removeLoading' }, '*'))

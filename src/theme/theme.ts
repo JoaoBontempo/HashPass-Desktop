@@ -7,14 +7,14 @@ export const lightTheme = {
     dark: false,
     colors: {
         background: '#e3ffff',
-        surface: '#FFFFFF',
+        surface: '#505050',
         primary: '#000552',
         secondary: '#0062ff',
         error: '#B00020',
         info: '#2196F3',
         success: '#4CAF50',
         warning: '#FB8C00',
-        accent: '#4ff9ff'
+        accent: '#0062ff'
     },
 }
 

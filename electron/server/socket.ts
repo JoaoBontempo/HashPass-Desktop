@@ -2,7 +2,7 @@ import api from './api'
 import http from 'http'
 import ip from 'ip';
 import expressWs from 'express-ws'
-import { decryptDeviceMessage } from './auth';
+import { decryptSymetricDeviceMessage, encryptSymetricDeviceMessage } from './auth';
 import DeviceOperationDTO from '../interface/device/deviceOperationDTO';
 import process from './process';
 
@@ -25,7 +25,7 @@ export default class HashPassSocket {
 
             ws.on('message', (message : string) => {
                 console.log('Received message: ' + message)
-                decryptDeviceMessage(message).then(this.processMessage)
+                this.processMessage(decryptSymetricDeviceMessage(message))
             })   
 
             ws.on('close', () => {
@@ -40,13 +40,12 @@ export default class HashPassSocket {
         })
     }
 
-    sendMessage(data : any) {
-        console.log('Sending message: ' + data)
-        this.userWsConnection.send(JSON.stringify(data))
+    sendMessage(data : DeviceOperationDTO<unknown>) {
+        const deviceMessage = encryptSymetricDeviceMessage(data)
+        this.userWsConnection.send(deviceMessage)
     }
 
     processMessage(deviceData : DeviceOperationDTO<any>) {
-        console.log(deviceData)
         process[deviceData.operation](this, deviceData)
     }
 

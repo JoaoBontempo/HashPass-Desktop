@@ -4,12 +4,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: () => import('./components/HelloWorld.vue'),
+    component: () => import('./components/MainMenu.vue'),
   },
   {
-    path: '/another',
-    name: 'another',
-    component: () => import('./components/AnotherPage.vue'),
+    path: '/import',
+    name: 'import',
+    component: () => import('./components/ImportPage.vue'),
   },
 ]
 

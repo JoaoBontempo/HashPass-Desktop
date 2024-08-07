@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.dragable {
+  -webkit-app-region: drag;
+}
+
+select, button {
+  -webkit-app-region: none;
+}
+
+html {
+  overflow: hidden !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background-color: transparent;
+}
+
+body, html, .v-application {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.default-menu {
+  width: 100vw;
+  height: calc(100vh - (var(--v-layout-bottom) + var(--v-layout-top)));
+  background-color: rgb(var(--v-theme-background));
+}
+
+.main-logo {
+  opacity: 0.25;
+}
+
+.import-option {
+  background-color: transparent;
+  border-radius: 15px;
+  border: 1.5px solid rgb(var(--v-theme-surface));
+  color: rgb(var(--v-theme-surface));
+}
+
+.import-option label i {
+  width: 48px;
+  height: 48px;
+  font-size: 40px;
+}
+
+.import-option[selected=true] {
+  border: 1.5px solid rgb(var(--v-theme-accent));
+  color: rgb(var(--v-theme-accent))
+}
+
+.Vue-Toastification__toast--warning{
+  color: black !important;
+}
