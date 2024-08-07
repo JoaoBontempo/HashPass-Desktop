@@ -1,6 +1,6 @@
 import { useToast } from "vue-toastification";
 import Papa from 'papaparse';
-import { BrowserPasswordFile } from "../../public/ts/browserExportOption";
+import { BrowserPasswordFile } from "./browserExportOption";
 
 
 const toastr = useToast()

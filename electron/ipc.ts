@@ -3,7 +3,7 @@ import HashPassSocket from "./server/socket";
 import { get } from "./session";
 import { SessionKeys } from "./interface/session/sessionKeys";
 import { ExposedKeys } from './interface/exposedKeys'
-import { BrowserPasswordFile } from "../public/ts/browserExportOption";
+import { BrowserPasswordFile } from "../src/ts/browserExportOption";
 import DeviceOperationDTO from "./interface/device/deviceOperationDTO";
 import { DeviceOperation } from "./interface/device/deviceOperation";
 
@@ -37,7 +37,6 @@ function minimize() {
 
 function importFile() {
     ipcMain.on(ExposedKeys.BROWSER_IMPORT, (_, browserCsv : BrowserPasswordFile[]) => {
-        console.log(browserCsv)
         const socket = get<HashPassSocket>(SessionKeys.SOCKET);
         socket.sendMessage({
             data: browserCsv,

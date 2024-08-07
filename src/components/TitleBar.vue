@@ -22,8 +22,8 @@
 import { defineComponent, reactive } from 'vue';
 import { useTheme } from 'vuetify'
 import { useLocale } from 'vuetify';
-import { AppLanguages } from '../../public/ts/languages'
-import { AppThemes } from '../../public/ts/theme'
+import { AppLanguages } from '../locales/languages'
+import { Themes } from '../theme/theme'
 
 export default defineComponent({
     name: 'TitleBar',
@@ -50,7 +50,7 @@ export default defineComponent({
         //@ts-expect-error
         const minimize = api.minimize
 
-        const toggleTheme = () => theme.global.name.value = theme.global.current.value.dark ? AppThemes.LIGHT : AppThemes.DARK
+        const toggleTheme = () => theme.global.name.value = theme.global.current.value.dark ? Themes.LIGHT : Themes.DARK
 
         const changeLanguage = () => locale.current.value = state.selectedLanguage
 

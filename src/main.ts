@@ -14,7 +14,7 @@ import './index.css';
 import { darkTheme, lightTheme } from './theme/theme'
 import i18n from './locales/i18n'
 import { useI18n } from 'vue-i18n'
-import { AppThemes } from '../public/ts/theme'
+import { Themes } from './theme/theme'
 import Toast from 'vue-toastification'
 import 'vue-toastification/dist/index.css'
 
@@ -23,7 +23,7 @@ const vuetify = createVuetify({
     adapter: createVueI18nAdapter({ i18n, useI18n }),
   },
   theme: {
-    defaultTheme: AppThemes.DARK,
+    defaultTheme: Themes.DARK,
     themes: {
       darkTheme, lightTheme
     }

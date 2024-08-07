@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron"
 import { ExposedKeys } from "./interface/exposedKeys"
-import { BrowserPasswordFile } from "../public/ts/browserExportOption"
+import { BrowserPasswordFile } from "../src/ts/browserExportOption"
 
 export default function setBridge(){
     contextBridge.exposeInMainWorld('api', {

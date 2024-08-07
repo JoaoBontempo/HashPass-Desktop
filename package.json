@@ -1,11 +1,38 @@
 {
-  "name": "hashpass-desktop-vite",
-  "private": true,
+  "name": "hashpass-desktop",
+  "productName": "HashPass Desktop",
+  "private": false,
   "version": "1.0.0",
+  "author": "HashPass",
+  "description": "HashPass Desktop Module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build && electron-builder",
     "preview": "vite preview"
+  },
+  "build": {
+    "appId": "com.hashpass.desktop",
+    "productName": "HashPass Desktop",
+    "win": {
+      "icon": "build/icons/256.ico"
+    },
+    "linux": {
+      "icon": "build/icons"
+    },
+    "extraResources": [
+      "src/assets"
+    ],
+    "files": [
+      "./build/**/*",
+      "./dist/**/*",
+      "./dist-electron",
+      "./node_modules/**/*",
+      "./public/**/*",     
+      "*.js"
+    ],
+    "directories": {
+      "buildResources": "./build/icons"
+    }
   },
   "dependencies": {
     "bufferutil": "^4.0.7",

@@ -27,7 +27,7 @@ function createWindow() {
   set<HashPassSocket>(SessionKeys.SOCKET, socket);
   
   win = new BrowserWindow({
-    icon: path.join(process.env.PUBLIC, 'electron-vite.svg'),
+    icon: process.env.ICONS = path.join(__dirname, '../build/icons', '256.ico'),
     autoHideMenuBar: true,
     frame: false,
     transparent: true,

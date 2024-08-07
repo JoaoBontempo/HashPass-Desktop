@@ -35,7 +35,7 @@
 import { defineComponent, reactive } from 'vue';
 import HashPassMenu from './HashPassMenu.vue';
 import ImportOption from './ImportOption.vue';
-import { BrowserExportOption } from '../../public/ts/browserExportOption'
+import { BrowserExportOption } from '../ts/browserExportOption'
 import { useToast } from "vue-toastification";
 import i18n from '../locales/i18n';
 import importCsv from '../ts/importCsv'
